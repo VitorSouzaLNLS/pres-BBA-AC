@@ -1,0 +1,233 @@
+
+/* ******************************************* */
+
+.reveal-footer {
+  display: block;
+  position: absolute;
+  font-size: var(--r-footersize);
+  visibility: visible;
+  color: var(--r-half-color);
+
+  left: 8px;
+  bottom: 8px;
+  z-index: 31;
+  line-height: 1;
+  padding: 5px;
+}
+
+.reveal .slide-number {
+  font-family: var(--r-main-font);
+  font-weight: bold;
+  font-size: var(--r-footersize);
+  color: var(--r-main-color);
+  background-color: var(--r-bg-color);
+}
+
+/* ******************************************* */
+/* ******************************************* */
+
+.latex-table {
+    border-collapse: collapse; /* Remove o espaço entre as bordas */
+    /* font-family: "Computer Modern Serif", "Times New Roman", Times, serif; */
+    margin: 20px auto; /* Centraliza a tabela na página (opcional) */
+    font-size: 16px;
+  }
+
+  /* Espaçamento interno das células */
+  .latex-table th, 
+  .latex-table td {
+    padding: 4px 15px;
+    text-align: center; /* Centraliza tudo por padrão */
+  }
+
+  /* Alinha a primeira coluna à esquerda (igual ao 'l' do seu \begin{tabular}{lcc}) */
+  .latex-table td:first-child,
+  .latex-table th:first-child {
+    text-align: left;
+  }
+  
+
+  /* Linha dupla no topo e linha simples embaixo do título */
+  .latex-table .top-and-bottom-rule {
+    text-align: center;
+    border-top: 7px double var(--r-main-color); /* Equivalente ao \hline\hline */
+    border-bottom: 3px solid var(--r-main-color); /* Equivalente ao \hline */
+    font-weight: normal; /* No LaTeX o texto da tabela não é negrito por padrão */
+  }
+
+  .latex-table .no-rule {
+    border: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+
+  /* Linha simples abaixo */
+  .latex-table .mid-rule {
+    border-bottom: 3px solid var(--r-main-color); /* Equivalente ao \hline do meio */
+  }
+
+  /* Linha dupla na base da tabela */
+  .latex-table .bottom-rule {
+    border-bottom: 7px double var(--r-main-color); /* Equivalente ao \hline\hline final */
+  }
+
+/* ******************************************* */
+/* ******************************************* */
+
+
+/* Layout de duas colunas */
+.two-columns {
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+}
+
+.multiple-columns {
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+}
+
+.column {
+  flex: 1;
+}
+
+homebutton {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+    display: flex;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    padding: 5px 5px;
+    /* backdrop-filter: blur(5px); */
+    visibility: visible;
+    cursor: pointer;
+    color: var(--r-main-color);
+    font-size: 0.5em;
+}
+
+animatebutton {
+    position: fixed;
+    top: 10px;
+    right: 50px;
+    z-index: 999;
+    display: flex;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    padding: 5px 5px;
+    /* backdrop-filter: blur(5px); */
+    visibility: visible;
+    cursor: pointer;
+    color: var(--r-main-color);
+    font-size: 0.5em;
+}
+
+topmenu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+    display: flex;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 8px 12px;
+    /* backdrop-filter: blur(5px); */
+    visibility: visible;
+    cursor: pointer;
+    color: var(--r-main-color);
+    font-size: 0.7em;
+}
+
+topmenu:hover {
+    visibility: hidden;
+    opacity: 0;
+}
+
+header {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    padding: 8px 12px;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: visible;
+}
+
+header:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+button {
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    color: inherit;
+    visibility: inherit;
+}
+
+button:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.reveal-chapters {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  color: var(--r-half-color);
+  /* width: 95%; */
+  /* display: flex; */
+  /* justify-content: left; */
+  text-align: center;
+  font-size: var(--r-footersize);
+  z-index: 2000;
+}
+
+.reveal-chapters-pdf {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  color: var(--r-half-color);
+  /* width: 95%; */
+  /* display: flex; */
+  /* justify-content: left; */
+  text-align: center;
+  font-size: var(--r-footersize);
+  z-index: 2000;
+}
+
+.reveal-chapters span.present {
+  font-weight: bold;
+  color: var(--r-main-color);
+  /* font-style: italic; */
+  /* text-decoration: underline; */
+}
+
+.reveal-chapters-pdf span.present {
+  font-weight: bold;
+  color: var(--r-main-color);
+}
+
+.reveal-chapters span.clickable:hover {
+  /* font-weight: bold; */
+  color: var(--r-selection-background-color);
+}
+
+#contentsList li:hover {
+    color: var(--r-selection-background-color);
+}
