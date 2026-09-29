@@ -229,5 +229,11 @@ button:hover {
 }
 
 #contentsList li:hover {
-    color: var(--r-selection-background-color);
+  color: var(--r-selection-background-color);
+}
+
+p.accent {
+  /* color: var(--r-half-color); */
+  color: darkorchid;
+  font-style: italic;
 }
