@@ -237,3 +237,7 @@ p.accent {
   color: darkorchid;
   font-style: italic;
 }
+
+.recap {
+  color: var(--r-half-color);
+}

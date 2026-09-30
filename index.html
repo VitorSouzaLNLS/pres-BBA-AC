@@ -1,40 +1,61 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon_io/site.webmanifest" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png" />
-  <link rel="manifest" href="/favicon_io/site.webmanifest" />
+    <title>BBA&ndash;AC | Vitor Davi De Souza</title>
 
-  <title>BBA&ndash;AC | Vitor Davi De Souza</title>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\$", "\$"],
+          ],
+        },
+        svg: { fontCache: "global" },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="dist/mathjax-dist/tex-svg-full.js"
+      defer
+    ></script>
 
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [
-          ["$", "$"],
-          ["\$", "\$"],
-        ],
-      },
-      svg: { fontCache: "global" },
-    };
-  </script>
-  <script id="MathJax-script" async src="dist/mathjax-dist/tex-svg-full.js" defer></script>
+    <link rel="stylesheet" href="dist/reveal-dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal-dist/reveal.css" />
 
-  <link rel="stylesheet" href="dist/reveal-dist/reset.css" />
-  <link rel="stylesheet" href="dist/reveal-dist/reveal.css" />
+    <link rel="stylesheet" href="fonts/cm-fontfaces.css" />
+    <link rel="stylesheet" href="styles/rootstyle.css" id="rootstyle" />
+    <link rel="stylesheet" href="styles/mystyle.css" id="mystyle" />
+    <link rel="stylesheet" href="styles/white.css" id="theme" />
+    <link rel="stylesheet" href="styles/revmod.css" id="theme2" />
 
-  <link rel="stylesheet" href="fonts/cm-fontfaces.css" />
-  <link rel="stylesheet" href="styles/rootstyle.css" id="rootstyle" />
-  <link rel="stylesheet" href="styles/mystyle.css" id="mystyle" />
-  <link rel="stylesheet" href="styles/white.css" id="theme" />
-  <link rel="stylesheet" href="styles/revmod.css" id="theme2" />
-
-  <script type="importmap">
+    <script type="importmap">
       {
         "imports": {
           "three": "./dist/three-dist/build/three.module.min.js",
@@ -42,281 +63,427 @@
         }
       }
     </script>
-</head>
+  </head>
 
-<body data-theme="light">
-  <div class="reveal">
-    <div class="slides">
-      <section data-visibility="uncounted">
-        <h1 id="title">BBA-AC</h1>
-        <!-- <h3 style="font-weight: normal; margin-top: 1em">
+  <body data-theme="light">
+    <div class="reveal">
+      <div class="slides">
+        <section data-visibility="uncounted">
+          <h1 id="title">BBA-AC</h1>
+          <!-- <h3 style="font-weight: normal; margin-top: 1em">
                     Masters Qualification Exam
                 </h3> -->
-        <h4 style="margin-top: 2em">Vitor Davi de Souza</h4>
-        <p style="margin-top: 2em">Prof. Dr. Fernando Henrique de Sá</p>
-        <p style="font-size: 0.8em; margin-top: 2em">
-          <em>30 de setembro de 2026</em>
-        </p>
-      </section>
+          <h4 style="margin-top: 2em">Vitor Davi de Souza</h4>
+          <p style="margin-top: 2em">Prof. Dr. Fernando Henrique de Sá</p>
+          <p style="font-size: 0.8em; margin-top: 2em">
+            <em>30 de setembro de 2026</em>
+          </p>
+        </section>
 
-      <section data-visibility="uncounted">
-        <h2>Sumário</h2>
-        <ul id="contentsList"></ul>
-      </section>
-
-      <section data-visibility="uncounted">
-        <h1>O método BBA&ndash;AC</h1>
-      </section>
-
-      <!-- <section data-visibility="uncounted">
-          <h2>Roteiro</h2>
-          <div class="flow" style="flex-wrap: wrap"><span>Ideia do BBA</span><b>→</b><span>Excitação AC</span><b>→</b><span>Extração espectral</span><b>→</b><span>Offsets</span></div>
-          <p style="margin-top: 2em" class="muted">Uma mesma lógica para dois regimes de modulação do quadrupolo.</p>
+        <!-- <section data-visibility="uncounted">
+          <h2>Sumário</h2>
+          <ul id="contentsList"></ul>
         </section> -->
 
-      <!-- <section data-transition="slide">
-          <h2>Revisão: BBA</h2>
-          <p>O que é? <span class="fragment fade-in"> &RightArrow; uma ferramenta de calibração</span></p>
-          <p class="fragment fade-in">O que queremos determinar?<span class="fragment fade-in"> &RightArrow; os offsets dos BPMs</span></p>
-          <p class="fragment fade-in">O que são os offsets?
-            <span class="fragment fade-in"> 
-              <br>&RightArrow; Para cada BPM, existe um quadrupolo associado. 
-              <br>E os offsets são as leituras no BPM quando o feixe está alinhado ao centro magnético do quadrupolo.
-            </span>
+        <section data-transition="slide-in fade-out">
+          <!-- <h2>Setup inicial</h2> -->
+          <h2>Setup</h2>
+          <p style="margin-bottom: 1em">
+            Considere um BPM $i$, uma CH $j$ e uma CV $k$
           </p>
-        </section> -->
-
-      <section data-transition="slide-in fade-out">
-        <!-- <h2>Setup inicial</h2> -->
-        <h2>Os offsets</h2>
-        <p style="margin-bottom: 1em;">Considere um BPM $i$, uma CH $j$ e uma CV $k$</p>
-        <p>&RightArrow; Há um par de delta-kicks $(\Delta h_0, \Delta v_0)$ que
-          <!-- , quando aplicados,  -->
-          leva o feixe ao
-          centro do quadrupolo</p>
-        <p style="margin-top: 1em;">Nessa condição, as leituras no BPM $i$ são seus offsets:</p>
-        <p>
-          $\left\{\begin{aligned}
-          x_{i, \mathrm{offset}} &= \bar{x}_i + R^{xx}_{ij}\,\Delta h_0 + R^{xy}_{ik}\,\Delta v_0,\\
-          y_{i, \mathrm{offset}} &= \bar{y}_i + R^{yx}_{ij}\,\Delta h_0 + R^{yy}_{ik}\,\Delta v_0.
-          \end{aligned}\right.$
-        </p>
-        <p class="accent" style="margin-top: 1em;">
-          &RightArrow; Queremos determinar os offsets, mas não temos os $R$'s nem o par $(\Delta h_0,
-          \Delta v_0)$
-        </p>
-      </section>
-
-      <section data-transition="fade-in fade-out">
-        <h2>Excitação AC das corretoras</h2>
-        <p style="margin-top: 1em;">Com o mesmo setup anterior, excitamos a CH com frequência $f_h$ e a CV com $f_v$:
-        </p>
-        <p>
-          $\left\{\begin{aligned}
-          \Delta h(t) = \hat h\cos(2\pi f_h t)\\
-          \Delta v(t) = \hat v\cos(2\pi f_v t)
-          \end{aligned}\right.$
-        </p>
-        <p style="margin-top: 1em;">Assim, escrevemos as órbitas da seguinte forma:</p>
-        <p>
-          $\left\{\begin{aligned}
-          x_i(t)=\bar{x}_i+R^{xx}_{ij}\Delta h(t)+R^{xy}_{ik}\Delta v(t)\\
-          y_i(t)=\bar{y}_i+R^{yx}_{ij}\Delta h(t)+R^{yy}_{ik}\Delta v(t)
-          \end{aligned}\right.$
-        </p>
-        <p class="accent" style="margin-top: 1em;">
-          &RightArrow; Agora a órbita contém as assinaturas das corretoras
-        </p>
-      </section>
-
-      <section>
-        <h2>Projeções</h2>
-        <p style="margin-top: 1em;">Projetando a órbita nas frequências $f_h$ e $f_v$, obtemos:</p>
-        <p>$
-          \langle x_i|h \rangle = R^{xx}_{ij}\hat h, \quad
-          \langle x_i|v \rangle = R^{xy}_{ik}\hat v, \quad
-          \langle y_i|h \rangle = R^{yx}_{ij}\hat h, \quad
-          \langle y_i|v \rangle = R^{yy}_{ik}\hat v
-        $</p>
-        <p style="margin-top: 1em;">Com isso, podemos reescrever as órbitas sem os termos $R$'s:</p>
-        <p>
-          $\left\{\begin{aligned}
-          x_i(t)= \bar{x}_i + \langle x_i|h\rangle \tfrac{\Delta h(t)}{\hat h} + \langle x_i|v\rangle \tfrac{\Delta v(t)}{\hat v}\\
-          y_i(t)= \bar{y}_i + \langle y_i|h\rangle \tfrac{\Delta h(t)}{\hat h} + \langle y_i|v\rangle \tfrac{\Delta v(t)}{\hat v}
-          \end{aligned}\right.$
-        </p>
-        <p class="accent" style="margin-top: 1em;">
-          &RightArrow; Mesmo medindo $x$ e $y$, ainda não conhecemos $\Delta h/\hat{h}$ nem $\Delta v/\hat{v}$
-        </p>
-      </section>
-
-      <section>
-        <h2>Modulação do quadrupolo</h2>
-        <p style="margin-top: 1em;">Manténdo a excitação das corretoras, agora modulamos o quadrupolo:</p>
-        <p>$K = K_0 \longrightarrow K^\pm = K_0 \pm \Delta K$</p>
-        <p style="margin-top: 1em;">Com isso, obtemos:</p>
-        <p>
-          $\left\{\begin{aligned}
-          x_{i}^\pm(t)= \bar{x}^\pm_i + \langle x_i^\pm|h\rangle \tfrac{\Delta h(t)}{\hat h} + \langle x_i^\pm|v\rangle \tfrac{\Delta v(t)}{\hat v}\\
-          y_{i}^\pm(t)= \bar{y}^\pm_i + \langle y_i^\pm|h\rangle \tfrac{\Delta h(t)}{\hat h} + \langle y_i^\pm|v\rangle \tfrac{\Delta v(t)}{\hat v}
-          \end{aligned}\right.$
-        </p>
-        <p class="accent" style="margin-top: 1em;">
-          &RightArrow; Agora temos quatro equações diferentes, mas como se relacionam com os offsets?
-        </p>
-      </section>
-
-      <section>
-        <h2>A condição de alinhamento</h2>
-        <p style="margin-top: 1em;">
-          No início, definimos que $(\Delta h_0, \Delta v_0) \Leftrightarrow (x_{i, \text{offset}}, y_{i, \text{offset}})$
-          </p>
-          <p style="margin-top: 1em;">Aplicando $\Delta h_0$ e $\Delta v_0$ no lugar das excitações $\Delta h(t)$ e $\Delta v(t)$, teremos:</p>
           <p>
-            $\left\{\begin{aligned}
-            x_{i,0}^\pm= \bar{x}^\pm_i + \langle x_i^\pm|h\rangle \tfrac{\Delta h_0}{\hat h} + \langle x_i^\pm|v\rangle \tfrac{\Delta v_0}{\hat v}\\
-            y_{i,0}^\pm= \bar{y}^\pm_i + \langle y_i^\pm|h\rangle \tfrac{\Delta h_0}{\hat h} + \langle y_i^\pm|v\rangle \tfrac{\Delta v_0}{\hat v}
+            &RightArrow; Há um par de delta-kicks $(\Delta h_0, \Delta v_0)$ que
+            <!-- , quando aplicados,  -->
+            leva o feixe ao centro do quadrupolo
+          </p>
+          <p style="margin-top: 1em">
+            Nessa condição, as leituras no BPM $i$ são seus offsets:
+          </p>
+          <p>
+            $\left\{\begin{aligned} x_{i, \mathrm{offset}} &= \bar{x}_i +
+            R^{xx}_{ij}\,\Delta h_0 + R^{xy}_{ik}\,\Delta v_0,\\ y_{i,
+            \mathrm{offset}} &= \bar{y}_i + R^{yx}_{ij}\,\Delta h_0 +
+            R^{yy}_{ik}\,\Delta v_0. \end{aligned}\right.$
+          </p>
+          <!-- <p class="accent" style="margin-top: 1em">
+            &RightArrow; Queremos determinar os offsets, mas não temos os $R$'s
+            nem o par $(\Delta h_0, \Delta v_0)$
+          </p> -->
+        </section>
+
+        <section data-transition="fade-in fade-out">
+          <h2>Excitação AC das corretoras</h2>
+          <p style="margin-top: 1em">
+            Com o mesmo conjunto BPM-quadrupolo, CH e CV, excitamos a CH com
+            frequência $f_h$ e a CV com $f_v$:
+          </p>
+          <p>
+            $\left\{\begin{aligned} \Delta h(t) = \hat h\cos(2\pi f_h t)\\
+            \Delta v(t) = \hat v\cos(2\pi f_v t) \end{aligned}\right.$
+          </p>
+          <p style="margin-top: 1em">
+            Assim, escrevemos as órbitas da seguinte forma:
+          </p>
+          <p>
+            $\left\{\begin{aligned} x_i(t)=\bar{x}_i+R^{xx}_{ij}\Delta
+            h(t)+R^{xy}_{ik}\Delta v(t)\\ y_i(t)=\bar{y}_i+R^{yx}_{ij}\Delta
+            h(t)+R^{yy}_{ik}\Delta v(t) \end{aligned}\right.$
+          </p>
+          <!-- <p class="accent" style="margin-top: 1em">
+            &RightArrow; Agora a órbita contém as assinaturas das corretoras
+          </p> -->
+        </section>
+
+        <section data-transition="fade-in fade-out">
+          <h2>Projeções</h2>
+          <p style="margin-top: 1em">
+            Projetando a órbita nas frequências $f_h$ e $f_v$, obtemos:
+          </p>
+          <p>
+            $ \langle x_i|h \rangle = R^{xx}_{ij}\hat h, \quad \langle x_i|v
+            \rangle = R^{xy}_{ik}\hat v, \quad \langle y_i|h \rangle =
+            R^{yx}_{ij}\hat h, \quad \langle y_i|v \rangle = R^{yy}_{ik}\hat v $
+          </p>
+          <p style="margin-top: 1em">
+            Com isso, podemos reescrever as órbitas sem os $R$'s:
+          </p>
+          <p>
+            $\left\{\begin{aligned} x_i(t)= \bar{x}_i + \langle x_i|h\rangle
+            \tfrac{\Delta h(t)}{\hat h} + \langle x_i|v\rangle \tfrac{\Delta
+            v(t)}{\hat v}\\ y_i(t)= \bar{y}_i + \langle y_i|h\rangle
+            \tfrac{\Delta h(t)}{\hat h} + \langle y_i|v\rangle \tfrac{\Delta
+            v(t)}{\hat v} \end{aligned}\right.$
+          </p>
+          <!-- <p class="accent" style="margin-top: 1em">
+            &RightArrow; Mesmo medindo $x$ e $y$, ainda não conhecemos $\Delta
+            h/\hat{h}$ nem $\Delta v/\hat{v}$
+          </p> -->
+        </section>
+
+        <section data-transition="fade-in fade-out">
+          <h2>Modulação DC do quadrupolo</h2>
+          <p style="margin-top: 1em">
+            Manténdo a excitação das corretoras, agora modulamos o quadrupolo:
+          </p>
+          <p>$K = K_0 \longrightarrow K^\pm = K_0 \pm \Delta K$</p>
+          <p style="margin-top: 1em">Com isso, obtemos:</p>
+          <p>
+            $\left\{\begin{aligned} x_{i}^\pm(t)= \bar{x}^\pm_i + \langle
+            x_i^\pm|h\rangle \tfrac{\Delta h(t)}{\hat h} + \langle
+            x_i^\pm|v\rangle \tfrac{\Delta v(t)}{\hat v}\\ y_{i}^\pm(t)=
+            \bar{y}^\pm_i + \langle y_i^\pm|h\rangle \tfrac{\Delta h(t)}{\hat h}
+            + \langle y_i^\pm|v\rangle \tfrac{\Delta v(t)}{\hat v}
             \end{aligned}\right.$
           </p>
-        <p style="margin-top: 1em;">
-        Se o feixe está de fato centrado, então $x_{i, \text{offset}} = x_{i,0}^+ = x_{i,0}^-$
-        </p>
-      </section>
+          <!-- <p class="accent" style="margin-top: 1em;">
+          &RightArrow; Agora temos quatro equações diferentes, mas como se relacionam com os offsets?
+        </p> -->
+        </section>
 
-      <!-- <section>
-        <h2>A condição de alinhamento</h2>
-        <p>Se o feixe está no centro magnético, mudar a força do quadrupolo não altera a órbita:</p>
-        <div class="box eq">$$ x_{i,0}^{+}=x_{i,0}^{-}=x_{\mathrm{offset}}. $$</div>
-        <p>Definimos as variações DC normalizadas pelas amplitudes AC:</p>
-        <div class="eq">$$ M_h\equiv\frac{\Delta h_0}{\hat h}, \qquad M_v\equiv\frac{\Delta v_0}{\hat v}. $$</div>
-        <p class="muted">Os parâmetros $M_h$ e $M_v$ codificam o kick que centraliza o feixe.</p>
-      </section> -->
+        <section data-transition="fade-in fade-out">
+          <h2>A condição de alinhamento</h2>
+          <p style="margin-top: 1em">
+            No início, definimos que $(\Delta h_0, \Delta v_0) \Leftrightarrow
+            (x_{i, \text{offset}}, y_{i, \text{offset}})$
+          </p>
+          <p style="margin-top: 1em">
+            Aplicando $\Delta h_0$ e $\Delta v_0$ no lugar das excitações
+            $\Delta h(t)$ e $\Delta v(t)$, teremos:
+          </p>
+          <p>
+            $\left\{\begin{aligned} x_{i,0}^\pm= \bar{x}^\pm_i + \langle
+            x_i^\pm|h\rangle \tfrac{\Delta h_0}{\hat h} + \langle
+            x_i^\pm|v\rangle \tfrac{\Delta v_0}{\hat v}\\ y_{i,0}^\pm=
+            \bar{y}^\pm_i + \langle y_i^\pm|h\rangle \tfrac{\Delta h_0}{\hat h}
+            + \langle y_i^\pm|v\rangle \tfrac{\Delta v_0}{\hat v}
+            \end{aligned}\right.$
+          </p>
+          <p style="margin-top: 1em">
+            Se o feixe está de fato centrado, então $x_{i, \text{offset}} =
+            x_{i,0}^+ = x_{i,0}^-$, assim:
+          </p>
+          <p>
+            $\left\{\begin{aligned} -(\bar{x}^+_i - \bar{x}^-_i) &= (\langle
+            x_i^+|h\rangle - \langle x_i^-|h\rangle) \tfrac{\Delta h_0}{\hat h}
+            + (\langle x_i^+|v\rangle - \langle x_i^-|v\rangle) \tfrac{\Delta
+            v_0}{\hat v}\\ -(\bar{y}^+_i - \bar{y}^-_i) &= (\langle
+            y_i^+|h\rangle - \langle y_i^-|h\rangle) \tfrac{\Delta h_0}{\hat h}
+            + (\langle y_i^+|v\rangle - \langle y_i^-|v\rangle) \tfrac{\Delta
+            v_0}{\hat v} \end{aligned}\right.$
+          </p>
+          <!-- <p class="accent" style="margin-top: 1em">
+            &RightArrow; Agora temos duas equações e duas incógnitas
+          </p> -->
+        </section>
 
-      <section>
-        <h2>Uma equação no plano horizontal</h2>
-        <div class="eq">$$ \big(\langle x_i^+|h\rangle-\langle x_i^-|h\rangle\big)M_h +\big(\langle
-          x_i^+|v\rangle-\langle x_i^-|v\rangle\big)M_v =-\big(\bar{x}_i^+-\bar{x}_i^-\big). $$</div>
-        <p>Uma equação fornece uma combinação de $M_h$ e $M_v$.</p>
-        <p class="accent">A mesma condição na vertical fornece a segunda equação.</p>
-      </section>
+        <section data-transition="fade-in fade-out">
+          <p style="margin-top: 1em">
+            $\left\{\begin{aligned} -(\bar{x}^+_i - \bar{x}^-_i) &= (\langle
+            x_i^+|h\rangle - \langle x_i^-|h\rangle) \tfrac{\Delta h_0}{\hat h}
+            + (\langle x_i^+|v\rangle - \langle x_i^-|v\rangle) \tfrac{\Delta
+            v_0}{\hat v}\\ -(\bar{y}^+_i - \bar{y}^-_i) &= (\langle
+            y_i^+|h\rangle - \langle y_i^-|h\rangle) \tfrac{\Delta h_0}{\hat h}
+            + (\langle y_i^+|v\rangle - \langle y_i^-|v\rangle) \tfrac{\Delta
+            v_0}{\hat v} \end{aligned}\right.$
+          </p>
+          <p style="margin-top: 1em">Reescrevendo com a notação do Zeus:</p>
+          <p>
+            $ \left\{\begin{aligned} -D_x &= D_{xh}\,M_h + D_{xv}\,M_v\\ -D_y &=
+            D_{yh}\,M_h + D_{yv}\,M_v \end{aligned}\right.\qquad$ onde $
+            \qquad\left\{\begin{aligned} M_h &= \Delta h_0/\hat h\\ M_v &=
+            \Delta v_0/\hat v\\ D_x &= \bar{x}^+_i - \bar{x}^-_i\\ D_y &=
+            \bar{y}^+_i - \bar{y}^-_i\\ D_{xh} &= \langle x_i^+|h\rangle -
+            \langle x_i^-|h\rangle \\ D_{xv} &= \langle x_i^+|v\rangle - \langle
+            x_i^-|v\rangle \\ D_{yh} &= \langle y_i^+|h\rangle - \langle
+            y_i^-|h\rangle \\ D_{yv} &= \langle y_i^+|v\rangle - \langle
+            y_i^-|v\rangle \\ \end{aligned}\right. $
+          </p>
+        </section>
 
-      <section>
-        <h2>Duas equações, duas incógnitas</h2>
-        <div class="eq matrix">$$ \begin{bmatrix} D_{xh} & D_{xv}\\ D_{yh} & D_{yv} \end{bmatrix}
-          \begin{bmatrix}M_h\\M_v\end{bmatrix} =- \begin{bmatrix}D_x\\D_y\end{bmatrix}. $$</div>
-        <div class="small">$$ D_x=\bar{x}^+-\bar{x}^- ,\quad D_y=\bar{y}^+-\bar{y}^-\\ D_{xh}=\langle
-          x^+|h\rangle-\langle x^-|h\rangle,\quad D_{xv}=\langle x^+|v\rangle-\langle x^-|v\rangle $$</div>
-        <p class="small">e analogamente para $D_{yh}$ e $D_{yv}$.</p>
-      </section>
+        <section data-transition="fade-in fade-out">
+          <p>
+            $ \left\{\begin{aligned} -D_x &= D_{xh}\,M_h + D_{xv}\,M_v\\ -D_y &=
+            D_{yh}\,M_h + D_{yv}\,M_v \end{aligned}\right.$
+          </p>
+          <p style="margin-top: 1em">Em forma matricial:</p>
+          <p>
+            $ \left[\begin{matrix} M_h \\ M_v \end{matrix}\right] = -
+            \mathfrak{D}^{-1}\left[\begin{matrix} D_x \\ D_y \end{matrix}\right]
+            \quad$ onde $\quad \mathfrak{D} = \left[\begin{matrix} D_{xh} &
+            D_{xv} \\ D_{yh} & D_{yv} \end{matrix}\right] $
+          </p>
+          <p style="margin-top: 1em">Resolvendo para $M_h$ e $M_v$ obtemos:</p>
+          <p>
+            $ \left[\begin{matrix} M_h \\ M_v \end{matrix}\right] = -
+            \dfrac{1}{\det{\mathfrak{D}}} \left[\begin{matrix} D_{yv} & -D_{xv}
+            \\ -D_{yh} & D_{xh} \end{matrix}\right] \left[\begin{matrix} D_x \\
+            D_y \end{matrix}\right] \Rightarrow \left\{ \begin{aligned} M_h =
+            \dfrac{D_{xv}D_{y} - D_{yv}D_{x}}{D_{xh}D_{yv} - D_{yh}D_{xv}}\\ M_v
+            = \dfrac{D_{yh}D_{x} - D_{xh}D_{y}}{D_{xh}D_{yv} - D_{yh}D_{xv}}
+            \end{aligned} \right. $
+          </p>
+        </section>
 
-      <section>
-        <h2>Usando todos os BPMs</h2>
-        <p>As mesmas corretoras excitam toda a máquina. Portanto, o par $(M_h,M_v)$ é comum aos 160 BPMs.</p>
-        <div class="box eq">$$ Y_h=M_hX_h,\qquad Y_v=M_vX_v $$</div>
-        <p>Com os dados de todos os BPMs, obtemos $M_h$ e $M_v$ por um ajuste linear robusto.</p>
-        <p class="accent">A redundância transforma o problema em uma estimativa global.</p>
-      </section>
+        <section data-transition="fade-in fade-out">
+          <p>
+            $\left\{ \begin{aligned} M_h = \dfrac{D_{xv}D_{y} -
+            D_{yv}D_{x}}{D_{xh}D_{yv} - D_{yh}D_{xv}}\\ M_v = \dfrac{D_{yh}D_{x}
+            - D_{xh}D_{y}}{D_{xh}D_{yv} - D_{yh}D_{xv}} \end{aligned} \right. $
+          </p>
+          <p style="margin-top: 1em">
+            Por fim, fittamos o par $(M_h, M_v)$ com os dados dos 160 BPMs:
+          </p>
+          <p>
+            $\left\{ \begin{aligned} M_h = \dfrac{\vec{Y}_h}{\vec{X}}\\ M_v =
+            \dfrac{\vec{Y}_v}{\vec{X}} \end{aligned} \right. \Rightarrow \left\{
+            \begin{aligned} \vec{Y}_h = M_h\vec{X}\\ \vec{Y}_v = M_v\vec{X}
+            \end{aligned} \right. $
+          </p>
+        </section>
 
-      <section>
-        <h2>Dois estados → offsets</h2>
-        <p>Depois de determinar $M_h$ e $M_v$, usamos o BPM mais próximo do quadrupolo:</p>
-        <div class="eq">$$ \begin{aligned} x_l^0&=\bar{x}_l+\langle x_l|h\rangle M_h+\langle x_l|v\rangle M_v,\\
-          y_l^0&=\bar{y}_l+\langle y_l|h\rangle M_h+\langle y_l|v\rangle M_v. \end{aligned} $$</div>
-        <p>Idealmente, $K^+$ e $K^-$ dão o mesmo resultado; a média fornece o offset final.</p>
-      </section>
+        <section data-transition="fade-in fade-out">
+          <h2>A determinação dos offsets</h2>
+          <p style="margin-top: 1em">
+            Em posse de $M_h$ e $M_v$, retornamos ao BPM $i$, e calculamos os
+            offsets:
+          </p>
+          <p>
+            $\left\{\begin{aligned} x_{i, \mathrm{offset}} &= \bar{x}^\pm_i +
+            \langle x_i^\pm|h\rangle M_h + \langle x_i^\pm|v\rangle M_v\\ y_{i,
+            \mathrm{offset}} &= \bar{y}^\pm_i + \langle y_i^\pm|h\rangle M_h +
+            \langle y_i^\pm|v\rangle M_v \end{aligned}\right.$
+          </p>
+        </section>
 
-      <section data-visibility="uncounted">
-        <h1>Modo AC do quadrupolo</h1>
-      </section>
-
-      <section>
-        <h2>Quadrupolo modulado continuamente</h2>
-        <div class="box eq">$$ K(t)=K_0+\Delta K\cos(2\pi f_qt). $$</div>
-        <div class="two-columns">
-          <div>
-            <p><span class="accent">1.</span> Se há desalinhamento, surge uma distorção na frequência $f_q$:</p>
-            <div class="eq">$$d_{x,i}(t)=\hat d_{x,i}\cos(2\pi f_qt).$$</div>
+        <section data-transition="fade-in fade-out">
+          <h2>Modulação AC do quadrupolo</h2>
+          <p style="margin-top: 1em">
+            Com o mesmo setup, o método propõe uma variante com modulação AC do
+            quadrupolo:
+          </p>
+          <p>$K = K_0 \longrightarrow K(t) = K_0 + \Delta K\cos(2\pi f_q t)$</p>
+          <div class="two-columns">
+            <div class="column">
+              <p>
+                Se o feixe não está alinhado ao centro magnético do quadrupolo,
+                surge uma distorção na frequência $f_q$:
+              </p>
+              <p>$d_{x,i}(t)=\hat d_{x,i}\cos(2\pi f_qt)$</p>
+            </div>
+            <div class="column">
+              <p>E agora, a ORM também varia:</p>
+              <p>$R_{ij}(t) = R_{ij} + \rho_{ij}(t)$</p>
+            </div>
           </div>
-          <div>
-            <p><span class="accent">2.</span> A ORM também varia:</p>
-            <div class="eq">$$R_{ij}(t)=R_{ij}+\rho_{ij}(t).$$</div>
-          </div>
-        </div>
-      </section>
+          <p style="margin-top: 1em">Com isso, as órbitas serão:</p>
+          <p>
+            $\left\{\begin{aligned} x_{i}(t) &= \bar{x}_i + d_{x,i}(t) +
+            [R^{xx}_{ij}+\rho^{xx}_{ij}(t)]\Delta h(t) +
+            [R^{xy}_{ik}+\rho^{xy}_{ik}(t)]\Delta v(t) \\ y_{i}(t) &= \bar{y}_i
+            + d_{y,i}(t) + [R^{yx}_{ij}+\rho^{yx}_{ij}(t)]\Delta h(t) +
+            [R^{yy}_{ik}+\rho^{yy}_{ik}(t)]\Delta v(t) \end{aligned}\right.$
+          </p>
+        </section>
 
-      <section>
-        <h2>Órbita com modulação AC</h2>
-        <div class="eq">$$ x_i(t)=\bar{x}_i+d_{x,i}(t)+[R^{xx}_{ij}+\rho^{xx}_{ij}(t)]\Delta h(t)
-          +[R^{xy}_{ik}+\rho^{xy}_{ik}(t)]\Delta v(t). $$</div>
-        <p>A componente na frequência do quadrupolo combina:</p>
-        <div class="eq">$$ x_i(f_q)=d_{x,i}(f_q)+\rho^{xx}_{ij}(f_q)\Delta h_0 +\rho^{xy}_{ik}(f_q)\Delta v_0. $$</div>
-        <p class="muted">A expressão vertical é análoga.</p>
-      </section>
+        <section data-transition="fade-in fade-out">
+          <h2>A condição de alinhamento</h2>
+          <p class="recap" style="margin-top: 1em">
+            $\left\{\begin{aligned} x_{i}(t) &= \bar{x}_i + d_{x,i}(t) +
+            [R^{xx}_{ij}+\rho^{xx}_{ij}(t)]\Delta h(t) +
+            [R^{xy}_{ik}+\rho^{xy}_{ik}(t)]\Delta v(t) \\ y_{i}(t) &= \bar{y}_i
+            + d_{y,i}(t) + [R^{yx}_{ij}+\rho^{yx}_{ij}(t)]\Delta h(t) +
+            [R^{yy}_{ik}+\rho^{yy}_{ik}(t)]\Delta v(t) \end{aligned}\right.$
+          </p>
+          <p style="margin-top: 1em">
+            Partindo da mesma condição de que $(\Delta h_0, \Delta v_0)
+            \Leftrightarrow (x_{i, \text{offset}}, y_{i, \text{offset}})$,
+            quando o feixe está alinhado ao centro magnético do quadrupolo, a
+            componente na frequência $f_q$ deve desaparecer:
+          </p>
+          <p>
+            $ \left\{\begin{aligned} x_{i}^{(f_q)}(t) &= d_{x,i}(t) +
+            \rho^{xx}_{ij}(t)\Delta h_0 + \rho^{xy}_{ik}(t)\Delta v_0 \\
+            y_{i}^{(f_q)}(t) &=d_{y,i}(t) + \rho^{yx}_{ij}(t)\Delta h_0 +
+            \rho^{yy}_{ik}(t)\Delta v_0 \end{aligned}\right. \Rightarrow
+            \left\{\begin{aligned} 0 &= \hat{d}_{x,i} +
+            \hat{\rho}^{xx}_{ij}\Delta h_0 + \hat{\rho}^{xy}_{ik}\Delta v_0 \\ 0
+            &= \hat{d}_{y,i} + \hat{\rho}^{yx}_{ij}\Delta h_0 +
+            \hat{\rho}^{yy}_{ik}\Delta v_0 \end{aligned}\right. $
+          </p>
+          <p style="margin-top: 1em">
+            E os offsets do BPM $i$ são obtidos quase como anteriormente:
+          </p>
+          <p>
+            $\left\{\begin{aligned} x_{i, \mathrm{offset}} &= \bar{x}_i +
+            R^{xx}_{ij}\,\Delta h_0 + R^{xy}_{ik}\,\Delta v_0 = \bar{x}_i +
+            \langle x_i|h\rangle M_h + \langle x_i|v\rangle M_v\\ y_{i,
+            \mathrm{offset}} &= \bar{y}_i + R^{yx}_{ij}\,\Delta h_0 +
+            R^{yy}_{ik}\,\Delta v_0 = \bar{y}_i + \langle y_i|h\rangle M_h +
+            \langle y_i|v\rangle M_v \end{aligned}\right.$
+          </p>
+        </section>
 
-      <section>
+        <section data-transition="fade-in fade-out">
+          <h2>Projeções</h2>
+          <p class="recap" style="margin-top: 1em">
+            $\left\{\begin{aligned} x_{i}(t) &= \bar{x}_i + d_{x,i}(t) +
+            [R^{xx}_{ij}+\rho^{xx}_{ij}(t)]\Delta h(t) +
+            [R^{xy}_{ik}+\rho^{xy}_{ik}(t)]\Delta v(t) \\ y_{i}(t) &= \bar{y}_i
+            + d_{y,i}(t) + [R^{yx}_{ij}+\rho^{yx}_{ij}(t)]\Delta h(t) +
+            [R^{yy}_{ik}+\rho^{yy}_{ik}(t)]\Delta v(t) \end{aligned}\right.$
+          </p>
+          <p style="margin-top: 1em">
+            Com a excitação AC do quadrupolo acontecendo junto das corretoras,
+            as projeções são ligeiramente diferentes:
+          </p>
+          <p>
+            $ \langle x_i|h \rangle = R^{xx}_{ij}\hat h, \quad \langle x_i|v
+            \rangle = R^{xy}_{ik}\hat v, \quad \langle y_i|h \rangle =
+            R^{yx}_{ij}\hat h, \quad \langle y_i|v \rangle = R^{yy}_{ik}\hat v $
+          </p>
+          <p>
+            $ \langle x_i|q \rangle = \hat{d}_{x,i}, \quad \langle y_i|q \rangle
+            = \hat{d}_{y,i} $
+          </p>
+          <p>
+            $ \langle x_i|h+q \rangle = \langle x_i|h-q \rangle =
+            \tfrac{1}{2}\hat{\rho}^{xx}_{ij}\hat h, \quad \langle x_i|v+q
+            \rangle = \langle x_i|v-q \rangle =
+            \tfrac{1}{2}\hat{\rho}^{xy}_{ik}\hat v $
+          </p>
+          <p>
+            $ \langle y_i|h+q \rangle = \langle y_i|h-q \rangle =
+            \tfrac{1}{2}\hat{\rho}^{yx}_{ij}\hat h, \quad \langle y_i|v+q
+            \rangle = \langle y_i|v-q \rangle =
+            \tfrac{1}{2}\hat{\rho}^{yy}_{ik}\hat v $
+          </p>
+        </section>
+
+        <section data-transition="fade-in fade-out">
+          <p class="recap" style="margin-top: 1em">
+            $ \left\{\begin{aligned} 0 &= \hat{d}_{x,i} +
+            \hat{\rho}^{xx}_{ij}\Delta h_0 + \hat{\rho}^{xy}_{ik}\Delta v_0 \\ 0
+            &= \hat{d}_{y,i} + \hat{\rho}^{yx}_{ij}\Delta h_0 +
+            \hat{\rho}^{yy}_{ik}\Delta v_0 \end{aligned}\right. $
+          </p>
+          <p style="margin-top: 1em">
+            Retornando à condição de alinhamento, e reescrevendo com a notação
+            do Zeus:
+          </p>
+          <p>
+            $ \left\{\begin{aligned} 0 &= D_x + D_{xh}\,M_h + D_{xv}\,M_v\\ 0 &=
+            D_y + D_{yh}\,M_h + D_{yv}\,M_v \end{aligned}\right.\qquad$ onde $
+            \qquad\left\{\begin{aligned} D_x &= \langle x_i|q \rangle\\ D_y &=
+            \langle y_i|q \rangle\\ D_{xh} &= \langle x_i|h+q\rangle + \langle
+            x_i|h-q\rangle \\ D_{xv} &= \langle x_i|v+q\rangle + \langle
+            x_i|v-q\rangle \\ D_{yh} &= \langle y_i|h+q\rangle + \langle
+            y_i|h-q\rangle \\ D_{yv} &= \langle y_i|v+q\rangle + \langle
+            y_i|v-q\rangle \\ \end{aligned}\right. $
+          </p>
+        </section>
+
+        <section data-transition="fade-in fade-out">
+          <h2>A determinação dos offsets</h2>
+          <p style="margin-top: 1em">
+            Seguindo a mesma álgebra, serão obtidos $M_h$ e $M_v$:
+          </p>
+          <p>
+            $\left\{ \begin{aligned} M_h = \dfrac{D_{xv}D_{y} -
+            D_{yv}D_{x}}{D_{xh}D_{yv} - D_{yh}D_{xv}}\\ M_v = \dfrac{D_{yh}D_{x}
+            - D_{xh}D_{y}}{D_{xh}D_{yv} - D_{yh}D_{xv}} \end{aligned} \right.
+            \Rightarrow \left\{ \begin{aligned} M_h =
+            \dfrac{\vec{Y}_h}{\vec{X}}\\ M_v = \dfrac{\vec{Y}_v}{\vec{X}}
+            \end{aligned} \right. \Rightarrow \left\{ \begin{aligned} \vec{Y}_h
+            = M_h\vec{X}\\ \vec{Y}_v = M_v\vec{X} \end{aligned} \right. $
+          </p>
+          <p style="margin-top: 1em">
+            E, retornando ao BPM $i$, calculamos os offsets:
+          </p>
+          <p>
+            $\left\{\begin{aligned} x_{i, \mathrm{offset}} &= \bar{x}_i +
+            \langle x_i|h\rangle M_h + \langle x_i|v\rangle M_v\\ y_{i,
+            \mathrm{offset}} &= \bar{y}_i + \langle y_i|h\rangle M_h + \langle
+            y_i|v\rangle M_v \end{aligned}\right.$
+          </p>
+        </section>
+
+        <!-- <section>
         <h2>O produto de frequências</h2>
         <p>A modulação da ORM mistura as frequências da corretora e do quadrupolo:</p>
         <div class="eq">$$ \rho(t)\Delta h(t)=\hat\rho\hat h\cos(2\pi f_qt)\cos(2\pi f_ht) $$</div>
         <div class="box eq">$$ =\frac{\hat\rho\hat h}{2}\left[\cos 2\pi(f_h+f_q)t+ \cos 2\pi(f_h-f_q)t\right]. $$</div>
         <p class="accent">As bandas laterais $f_h\pm f_q$ carregam a informação sobre a ORM modulada.</p>
-      </section>
-
-      <section>
-        <h2>Mesma álgebra, novos canais</h2>
-        <p>Definimos os termos a partir das projeções espectrais:</p>
-        <div class="eq small">$$ D_x=\langle x|q\rangle,\quad D_y=\langle y|q\rangle $$</div>
-        <div class="eq small">$$ D_{xh}=\langle x|h+q\rangle+\langle x|h-q\rangle, \quad D_{xv}=\langle
-          x|v+q\rangle+\langle x|v-q\rangle $$</div>
-        <p class="small">com as expressões correspondentes para $D_{yh}$ e $D_{yv}$.</p>
-        <div class="box eq">$$ \begin{bmatrix}D_{xh}&D_{xv}\\D_{yh}&D_{yv}\end{bmatrix}
-          \begin{bmatrix}M_h\\M_v\end{bmatrix} =-\begin{bmatrix}D_x\\D_y\end{bmatrix}. $$</div>
-      </section>
-
-      <section>
-        <h2>Resultado final</h2>
-        <p>Os mesmos $M_h$ e $M_v$ são obtidos a partir das componentes espectrais da órbita.</p>
-        <div class="eq">$$ \begin{aligned} x_l^0&=\bar{x}_l+\langle x_l|h\rangle M_h+\langle x_l|v\rangle M_v,\\
-          y_l^0&=\bar{y}_l+\langle y_l|h\rangle M_h+\langle y_l|v\rangle M_v. \end{aligned} $$</div>
-        <div class="flow"><span>excitar</span><b>→</b><span>projetar</span><b>→</b><span>resolver
-            $M_h,M_v$</span><b>→</b><span>ler offsets</span></div>
-      </section>
-
-      <section data-visibility="uncounted">
-        <h1>BBA-AC</h1>
-        <p style="margin-top: 1.5em">A modulação transforma o alinhamento em uma assinatura espectral.</p>
-        <p class="accent">E a álgebra conecta essa assinatura aos offsets dos BPMs.</p>
-      </section>
+      </section> -->
+      </div>
     </div>
-  </div>
-  <div class="reveal-footer" id="nonpdf-footer">
-    <span>V. D. de Souza</span>
-    <span>•</span>
-    <span>BBA&ndash;AC</span>
-    <span>•</span>
-    <span>30 de setembro de 2026</span>
-  </div>
+    <div class="reveal-footer" id="nonpdf-footer">
+      <span>V. D. de Souza</span>
+      <span>•</span>
+      <span>BBA&ndash;AC</span>
+      <span>•</span>
+      <span>30 de setembro de 2026</span>
+    </div>
 
-  <div class="reveal-chapters" id="sectionHeaders"></div>
+    <div class="reveal-chapters" id="sectionHeaders"></div>
 
-  <script src="dist/reveal-dist/reveal.js"></script>
-  <script src="dist/reveal-dist/plugin/notes.js"></script>
-  <script src="dist/reveal-dist/plugin/markdown.js"></script>
-  <script src="dist/reveal-dist/plugin/highlight.js"></script>
-  <script>
-    Reveal.initialize({
-      width: 1600,
-      height: 900,
-      hash: true,
-      slideNumber: "c/t",
-      controls: false,
-      progress: false,
-      center: true,
-      margin: 0.05,
-      pdfSeparateFragments: true,
-      plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
-    });
-  </script>
-  <script src="dist/mymainscript.js"></script>
-</body>
-
+    <script src="dist/reveal-dist/reveal.js"></script>
+    <script src="dist/reveal-dist/plugin/notes.js"></script>
+    <script src="dist/reveal-dist/plugin/markdown.js"></script>
+    <script src="dist/reveal-dist/plugin/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+        width: 1600,
+        height: 900,
+        hash: true,
+        slideNumber: "c/t",
+        controls: false,
+        progress: false,
+        center: true,
+        margin: 0.05,
+        pdfSeparateFragments: true,
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+    <script src="dist/mymainscript.js"></script>
+  </body>
 </html>
