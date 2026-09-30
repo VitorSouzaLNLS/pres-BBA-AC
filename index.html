@@ -68,9 +68,6 @@
       <div class="slides">
         <section data-visibility="uncounted" data-transition="fade-in slide-out">
           <h1 id="title">BBA-AC</h1>
-          <!-- <h3 style="font-weight: normal; margin-top: 1em">
-                    Masters Qualification Exam
-                </h3> -->
           <h4 style="margin-top: 2em">Vitor Davi de Souza</h4>
           <p style="margin-top: 2em">Fernando Henrique de Sá</p>
           <p style="font-size: 0.8em; margin-top: 2em">
@@ -89,24 +86,11 @@
 
         <section data-transition="fade-in fade-out">
           <h2>BBA-AC</h2>
-          <!-- <h4><em>"Fast Beam-Based Alignment using AC Excitations"</em></h4> -->
-          <!-- <div class="two-columns" style="gap: 0">
-            <div class="column" style="flex: 0 0 70%"> -->
               <img 
               src="images/current/frontface.png" 
               alt="https://journals.aps.org/prab/pdf/10.1103/PhysRevAccelBeams.23.012802" 
               style="width: 50%; margin-top: 0em;" 
               />
-            <!-- </div> -->
-            <!-- <div class="column" style="align-self: center;">
-              <ul>
-                <li>Corretoras AC</li>
-                <li>Alta taxa de aquisição de órbita</li>
-                <li></li>
-                <li>a</li>
-              </ul>
-            </div>
-          </div> -->
         </section>
         
         <section data-visibility="uncounted" data-transition="slide-in fade-out">
@@ -114,14 +98,12 @@
         </section>
 
         <section data-transition="fade-in fade-out">
-          <!-- <h2>Setup inicial</h2> -->
           <h2>Setup</h2>
           <p style="margin-bottom: 1em">
             Considere um BPM $i$, seu quadrupolo associado, e uma corretora horizontal $j$
           </p>
           <p>
-            &RightArrow; Há um valor de delta-kick $\Delta h_0$ que
-            <!-- , quando aplicados,  -->
+            &RightArrow; Há um kick $\Delta h_0$ que
             leva o feixe ao centro magnético (hor.) do quadrupolo
           </p>
           <p style="margin-top: 1em">
@@ -146,9 +128,6 @@
           <p>
             $$x_i(t) = \bar{x}_i+R^{xx}_{ij}\Delta h(t)$$
           </p>
-          <!-- <p class="accent" style="margin-top: 1em">
-            &RightArrow; Agora a órbita contém as assinaturas das corretoras
-          </p> -->
         </section>
 
         <section data-transition="fade-in fade-out">
@@ -210,15 +189,12 @@
         </section>
 
         <section data-transition="fade-in fade-out">
-          <!-- <h2>Setup inicial</h2> -->
           <h2>Setup</h2>
           <p style="margin-bottom: 1em">
             Considere um BPM $i$, seu quadrupolo associado, uma CH $j$ e uma CV $k$
           </p>
           <p>
-            &RightArrow; Há um par de kicks $(\Delta h_0, \Delta v_0)$ que
-            <!-- , quando aplicados,  -->
-            leva o feixe ao centro do quadrupolo
+            &RightArrow; Há um par de kicks $(\Delta h_0, \Delta v_0)$ que leva o feixe ao centro do quadrupolo
           </p>
           <p style="margin-top: 1em">
             Nessa condição, as leituras no BPM $i$ são seus offsets:
@@ -229,10 +205,6 @@
             y_{i, \mathrm{offset}} &= \bar{y}_i + R^{yx}_{ij}\,\Delta h_0 + R^{yy}_{ik}\,\Delta v_0
             \end{aligned}\right.$
           </p>
-          <!-- <p class="accent" style="margin-top: 1em">
-            &RightArrow; Queremos determinar os offsets, mas não temos os $R$'s
-            nem o par $(\Delta h_0, \Delta v_0)$
-          </p> -->
         </section>
 
         <section data-transition="fade-in fade-out">
@@ -252,9 +224,6 @@
             h(t)+R^{xy}_{ik}\Delta v(t)\\ y_i(t)=\bar{y}_i+R^{yx}_{ij}\Delta
             h(t)+R^{yy}_{ik}\Delta v(t) \end{aligned}\right.$
           </p>
-          <!-- <p class="accent" style="margin-top: 1em">
-            &RightArrow; Agora a órbita contém as assinaturas das corretoras
-          </p> -->
         </section>
 
         <section data-transition="fade-in fade-out">
@@ -277,10 +246,6 @@
             \tfrac{\Delta h(t)}{\hat h} + \langle y_i|v\rangle \tfrac{\Delta
             v(t)}{\hat v} \end{aligned}\right.$
           </p>
-          <!-- <p class="accent" style="margin-top: 1em">
-            &RightArrow; Mesmo medindo $x$ e $y$, ainda não conhecemos $\Delta
-            h/\hat{h}$ nem $\Delta v/\hat{v}$
-          </p> -->
         </section>
 
         <section data-transition="fade-in fade-out">
@@ -298,9 +263,6 @@
             + \langle y_i^\pm|v\rangle \tfrac{\Delta v(t)}{\hat v}
             \end{aligned}\right.$
           </p>
-          <!-- <p class="accent" style="margin-top: 1em;">
-          &RightArrow; Agora temos quatro equações diferentes, mas como se relacionam com os offsets?
-        </p> -->
         </section>
 
         <section data-transition="fade-in fade-out">
@@ -334,9 +296,6 @@
             + (\langle y_i^+|v\rangle - \langle y_i^-|v\rangle) \tfrac{\Delta
             v_0}{\hat v} \end{aligned}\right.$
           </p>
-          <!-- <p class="accent" style="margin-top: 1em">
-            &RightArrow; Agora temos duas equações e duas incógnitas
-          </p> -->
         </section>
 
         <section data-transition="fade-in fade-out">
@@ -571,14 +530,6 @@
             y_i|v\rangle M_v \end{aligned}\right.$
           </p>
         </section>
-
-        <!-- <section>
-        <h2>O produto de frequências</h2>
-        <p>A modulação da ORM mistura as frequências da corretora e do quadrupolo:</p>
-        <div class="eq">$$ \rho(t)\Delta h(t)=\hat\rho\hat h\cos(2\pi f_qt)\cos(2\pi f_ht) $$</div>
-        <div class="box eq">$$ =\frac{\hat\rho\hat h}{2}\left[\cos 2\pi(f_h+f_q)t+ \cos 2\pi(f_h-f_q)t\right]. $$</div>
-        <p class="accent">As bandas laterais $f_h\pm f_q$ carregam a informação sobre a ORM modulada.</p>
-      </section> -->
       </div>
     </div>
     <div class="reveal-footer" id="nonpdf-footer">
