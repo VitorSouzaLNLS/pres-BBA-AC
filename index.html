@@ -66,7 +66,7 @@
   <body data-theme="light">
     <div class="reveal">
       <div class="slides">
-        <section data-visibility="uncounted">
+        <section data-visibility="uncounted" data-transition="fade-in slide-out">
           <h1 id="title">BBA-AC</h1>
           <!-- <h3 style="font-weight: normal; margin-top: 1em">
                     Masters Qualification Exam
@@ -78,16 +78,163 @@
           </p>
         </section>
 
-        <!-- <section data-visibility="uncounted">
+        <section data-visibility="uncounted" data-transition="slide-in slide-out">
           <h2>Sumário</h2>
           <ul id="contentsList"></ul>
-        </section> -->
+        </section>
 
-        <section data-transition="slide-in fade-out">
+        <section data-visibility="uncounted" data-transition="slide-in fade-out">
+          <h1>Introdução</h1>
+        </section>
+
+        <section data-transition="fade-in fade-out">
+          <h2>BBA-AC</h2>
+          <!-- <h4><em>"Fast Beam-Based Alignment using AC Excitations"</em></h4> -->
+          <!-- <div class="two-columns" style="gap: 0">
+            <div class="column" style="flex: 0 0 70%"> -->
+              <img 
+              src="images/current/frontface.png" 
+              alt="https://journals.aps.org/prab/pdf/10.1103/PhysRevAccelBeams.23.012802" 
+              style="width: 50%; margin-top: 0em;" 
+              />
+            <!-- </div> -->
+            <!-- <div class="column" style="align-self: center;">
+              <ul>
+                <li>Corretoras AC</li>
+                <li>Alta taxa de aquisição de órbita</li>
+                <li></li>
+                <li>a</li>
+              </ul>
+            </div>
+          </div> -->
+        </section>
+        
+        <section data-visibility="uncounted" data-transition="slide-in fade-out">
+          <h1>Single-plane</h1>
+        </section>
+
+        <section data-transition="fade-in fade-out">
           <!-- <h2>Setup inicial</h2> -->
           <h2>Setup</h2>
           <p style="margin-bottom: 1em">
-            Considere um BPM $i$, uma CH $j$ e uma CV $k$
+            Considere um BPM $i$, seu quadrupolo associado, e uma corretora horizontal $j$
+          </p>
+          <p>
+            &RightArrow; Há um valor de delta-kick $\Delta h_0$ que
+            <!-- , quando aplicados,  -->
+            leva o feixe ao centro horizontal do quadrupolo
+          </p>
+          <p style="margin-top: 1em">
+            Nessa condição, a posição $x$ lida no BPM $i$ é seu offset horzontal:
+          </p>
+          <p>
+            $$x_{i, \text{offset}} = \bar{x}_i + R^{xx}_{ij}\,\Delta h_0$$
+          </p>
+        </section>
+
+        <section data-transition="fade-in fade-out">
+          <h2>Excitação AC da corretora</h2>
+          <p style="margin-top: 1em">
+            Ao invés de varreduras discretas de posição como no BBA tradicional, excitamos a CH com frequência $f_h$:
+          </p>
+          <p>
+            $$\Delta h(t) = \hat h\cos(2\pi f_h t)$$
+          </p>
+          <p style="margin-top: 1em">
+            Com isso, escrevemos a órbita da seguinte forma:
+          </p>
+          <p>
+            $$x_i(t) - =\bar{x}_i+R^{xx}_{ij}\Delta h(t)$$
+          </p>
+          <!-- <p class="accent" style="margin-top: 1em">
+            &RightArrow; Agora a órbita contém as assinaturas das corretoras
+          </p> -->
+        </section>
+
+        <section data-transition="fade-in fade-out">
+          <h2>A condição de alinhamento</h2>
+          <p style="margin-top: 1em">
+            Dada nossa condição que $\Delta h_0 \Leftrightarrow x_{i,\text{offset}}$, podemos reescrever a órbita:
+          </p>
+          <p>
+            $x_i(t) - x_{i,\text{offset}} = R^{xx}_{ij}\left[\Delta h(t) - \Delta h_0\right]$
+          </p>
+          <p style="margin-top: 1em">
+            Em qualquer outro BPM $l$, teremos a mesma condição:
+          </p>
+          <p>
+            $x_l(t) - x_{l,0} = R^{xx}_{lj}\left[\Delta h(t) - \Delta h_0\right]$
+          </p>
+          <p style="margin-top: 1em">
+            Assim:
+          </p>
+          <p>
+            $x_i(t) - x_{i,\text{offset}} = \tfrac{R^{xx}_{ij}}{R^{xx}_{lj}}(x_l(t) - x_{l,0})$
+          </p>
+        </section>
+
+        <!-- <section data-transition="fade-in fade-out">
+          <h2>Modulação do quadrupolo</h2>
+          <p style="margin-top: 1em">
+            Variando a força do quadrupolo para $K_0 + \Delta K$ e $K_0 - \Delta K$, teremos duas retas:
+          </p>
+          <p>
+            $\left\{
+            \begin{aligned}
+            r_1: x_i^+(t) - x_{i,\text{offset}} = \tfrac{R^{xx+}_{ij}}{R^{xx+}_{lj}}(x_l^+(t) - x_{l,0})\\
+            r_2: x_i^-(t) - x_{i,\text{offset}} = \tfrac{R^{xx-}_{ij}}{R^{xx-}_{lj}}(x_l^-(t) - x_{l,0})
+            \end{aligned}
+            \right.$
+          </p>
+          <p style="margin-top: 1em">
+            Dessa forma, a intersseção das retas fornece $(x_{i,\text{offset}}, x_{l, 0})$ que indica quando o feixe está alinhado
+          </p>
+          <p>
+            &RightArrow; Assim, o offset do BPM $i$ é determinado por $x_{i, \text{offset}}$
+          </p>
+        </section> -->
+
+        <section data-transition="fade-in fade-out">
+          <h2>Determinação do offset</h2>
+          <div class="two-columns" style="margin-top: 1em;">
+            <div class="column"  style="flex: 0 0 65%; margin-top: 1em;">
+              <p>
+            Variando a força do quadrupolo para $K_0 + \Delta K$ e $K_0 - \Delta K$, teremos:
+          </p>
+          <p>
+            $\left\{
+            \begin{aligned}
+            r_1: x_i^+(t) - x_{i,\text{offset}} = \tfrac{R^{xx+}_{ij}}{R^{xx+}_{lj}}(x_l^+(t) - x_{l,0})\\
+            r_2: x_i^-(t) - x_{i,\text{offset}} = \tfrac{R^{xx-}_{ij}}{R^{xx-}_{lj}}(x_l^-(t) - x_{l,0})
+            \end{aligned}
+            \right.$
+          </p>
+          <p style="margin-top: 1em">
+            &RightArrow; A intersseção das retas fornece $(x_{i,\text{offset}}, x_{l, 0})$ que indica quando o feixe está alinhado
+          </p>
+          <p>
+            &RightArrow; Assim, o offset do BPM $i$ é determinado por $x_{i, \text{offset}}$
+          </p>
+            </div>
+            <div class="column">
+              <img 
+              src="images/current/plot1.png" 
+              alt="plot" 
+              style="width: 100%; margin-top: 0em;"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section data-visibility="uncounted" data-transition="slide-in fade-out">
+          <h1>Dual-plane & quadrupole DC</h1>
+        </section>
+
+        <section data-transition="fade-in fade-out">
+          <!-- <h2>Setup inicial</h2> -->
+          <h2>Setup</h2>
+          <p style="margin-bottom: 1em">
+            Considere um BPM $i$, seu quadrupolo associado, uma CH $j$ e uma CV $k$
           </p>
           <p>
             &RightArrow; Há um par de delta-kicks $(\Delta h_0, \Delta v_0)$ que
@@ -112,8 +259,7 @@
         <section data-transition="fade-in fade-out">
           <h2>Excitação AC das corretoras</h2>
           <p style="margin-top: 1em">
-            Com o mesmo conjunto BPM-quadrupolo, CH e CV, excitamos a CH com
-            frequência $f_h$ e a CV com $f_v$:
+            Excitamos a CH com frequência $f_h$ e a CV com $f_v$:
           </p>
           <p>
             $\left\{\begin{aligned} \Delta h(t) = \hat h\cos(2\pi f_h t)\\
@@ -279,7 +425,7 @@
           </p>
         </section>
 
-        <section data-transition="fade-in fade-out">
+        <section data-transition="fade-in slide-out">
           <h2>A determinação dos offsets</h2>
           <p style="margin-top: 1em">
             Em posse de $M_h$ e $M_v$, retornamos ao BPM $i$, e calculamos os
@@ -293,10 +439,14 @@
           </p>
         </section>
 
+        <section data-visibility="uncounted" data-transition="slide-in fade-out">
+          <h1>Dual-plane & quadrupole AC</h1>
+        </section>
+
         <section data-transition="fade-in fade-out">
-          <h2>Modulação AC do quadrupolo</h2>
+          <h2>Setup</h2>
           <p style="margin-top: 1em">
-            Com o mesmo setup, o método propõe uma variante com modulação AC do
+            Com o mesmo BPM $i$, corretora CH $j$ e CV $k$, agora faremos modulação AC do
             quadrupolo:
           </p>
           <p>$K = K_0 \longrightarrow K(t) = K_0 + \Delta K\cos(2\pi f_q t)$</p>
